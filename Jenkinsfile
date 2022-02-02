@@ -1,23 +1,20 @@
 pipeline{
     agent any
     stages{
-    stage("code-checkout")
-    {
-        steps{
-        sh "echo hello"
+        stage("code checkout"){
+            steps{
+            echo "hello"
+            }
+        }   
+        stage("code build"){
+            steps{
+            echo "echo build"
+            }
+        }
+        stage("unit test"){
+            steps{
+            echo "unit-test"
+            }
         }
     }
-    stage("code-build")
-    {
-        steps{
-        sh "echo build"
-        }
-    }
-    stage("unit test")
-    {
-        steps{
-        sh "echo unit-test"
-        }
-    }
-}
 }
