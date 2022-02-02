@@ -16,5 +16,13 @@ pipeline{
             echo "unit-test"
             }
         }
+        post{
+            always{
+                //execute every time
+            }
+            success{
+                sh "echo suc"
+            }
+        }
     }
 }
