@@ -3,17 +3,17 @@ pipeline{
     stages{
         stage("code checkout"){
             steps{
-            echo "hello"
+            bat "echo hello"
             }
         }   
         stage("code build"){
             steps{
-            echo "echo build"
+            bat "echo build"
             }
         }
         stage("unit test"){
             steps{
-            echo "unit-test"
+            bat "echo unit-test"
             }
         }
         post{
@@ -21,7 +21,7 @@ pipeline{
                 //execute every time
             }
             success{
-                sh "echo suc"
+                bat "echo success"
             }
         }
     }
