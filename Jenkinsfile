@@ -16,7 +16,7 @@ pipeline{
         }
         stage("unit test"){
             steps{
-            bat "mvn test sonar:sonar"
+            bat "mvn test"
             }
         }
     }
