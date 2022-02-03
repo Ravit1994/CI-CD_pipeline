@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools{
+        maven "Maven"
+    }
     stages{
         stage("code checkout"){
             steps{
@@ -16,13 +19,10 @@ pipeline{
             bat "echo unit-test"
             }
         }
-        post{
-            always{
-                //execute every time
-            }
-            success{
-                bat "echo success"
+    }
+    post{
+        success{
+            bat "echo success"
             }
         }
-    }
 }
