@@ -29,6 +29,24 @@ pipeline{
                 }
             }
         }
+        stage("Publish to Artifactory"){
+            steps{
+                rtMavenDeployer(
+                    id: 'deployer',
+                    serverId: 'My_Artifactory',
+                    releaseRepo: 'My_Artifactory',
+                    snapshotRepo: 'My_Artifactory'
+                )
+                rtMavenRun(
+                    pom: 'pom.xml',
+                    goals: 'clean install',
+                    deployerId: 'deployer'
+                    )
+                rtPublishBuildInfo(
+                    serverId:'My_Artifactory',
+                )
+            }        
+        }
     }
     post{
         success{
