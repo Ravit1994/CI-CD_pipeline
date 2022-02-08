@@ -3,9 +3,6 @@
   <groupId>demoPortal_SeleniumTestCases</groupId>
   <artifactId>demoPortal_SeleniumTestCases</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <properties>
-	  <suiteXmlFile>DemoSampleApp_selenium/testng.xml</suiteXmlFile>
-  </properties>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
@@ -20,8 +17,8 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.5.1</version>
-          <source/>
-          <target/>
+          <source><source>
+          <target></target>
       </plugin>
       
    <plugin>
@@ -55,11 +52,6 @@
 <dependency>
     <groupId>org.apache.maven.surefire</groupId>
     <artifactId>surefire-api</artifactId>
-    <configuration>
-	    <suiteXmlFiles>
-		    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-	    </suiteXmlFiles>
-    </configuration>
     <version>2.19.1</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/sqljdbc4 -->
