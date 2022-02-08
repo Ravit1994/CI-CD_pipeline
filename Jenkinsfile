@@ -47,6 +47,11 @@ pipeline{
                 )
             }        
         }
+        stage("Invoke UI Test Pipeline"){
+			steps{
+				build job: 'FreestyleUITestCases'
+			}
+		}
     }
     post{
         success{
